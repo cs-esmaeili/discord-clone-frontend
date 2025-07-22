@@ -12,8 +12,6 @@ export default function LogInForm() {
 
         <Button onClick={() => { redirect('/clientside'); }}>client Side</Button>
         <Button onClick={() => { redirect('/clientsideHoc'); }}>client Hoc</Button>
-        <Button onClick={() => { redirect('/serverside'); }}>server side</Button>
-        <Button onClick={() => { redirect('/middlewareSide'); }}>middlewareSide</Button>
       </div>
   );
 }
