@@ -1,32 +1,42 @@
 'use client';
 
-import { refreshToken } from '@/utils/services/auth';
+import { refreshToken } from '@/lib/axios/services/auth';
 import { useEffect, useState } from 'react';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+import { useDispatch, useSelector } from 'react-redux';
+import { setAccessToken } from '@/lib/redux/slices/authSlice';
 
 type Props = {
     children: React.ReactNode;
 };
 
 export default function AuthLayout({ children }: Props) {
-    const [accessToken, setAccessToken] = useState<string | null>(null);
+
+    const dispatch = useDispatch();
     const [loading, setLoading] = useState(true);
+    const router = useRouter();
 
     useEffect(() => {
-        const getAccessToken = async () => {
+        const fetchToken = async () => {
             try {
                 const res = await refreshToken();
-                setAccessToken(res.data.accessToken);
-            } catch (error: any) {
+
+                if (!res?.data?.accessToken) {
+                    throw new Error('Invalid token received');
+                }
+
+                dispatch(setAccessToken(res.data.accessToken));
+            } catch (error) {
                 console.error('❌ Error fetching token:', error);
-                redirect('/');
+                router.replace('/');
             } finally {
                 setLoading(false);
             }
         };
 
-        getAccessToken();
+        fetchToken();
     }, []);
+
 
     if (loading) {
         return (
@@ -38,13 +48,6 @@ export default function AuthLayout({ children }: Props) {
         );
     }
 
-    if (!accessToken) {
-        return (
-            <main className="p-10 text-red-500">
-                <p>دسترسی غیرمجاز. لطفاً وارد شوید.</p>
-            </main>
-        );
-    }
 
     return <main className="p-10">{children}</main>;
 }

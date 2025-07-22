@@ -1,5 +1,5 @@
 // app/services/examSession.ts
-import http from "@/utils/axios";
+import http from "@/lib/axios/axios";
 
 const prefix = "auth";
 
