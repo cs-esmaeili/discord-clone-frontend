@@ -2,9 +2,9 @@
 
 import { refreshToken } from '@/lib/axios/services/auth';
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setAccessToken } from '@/lib/redux/slices/authSlice';
+import { useLogout } from '@/hooks/useLogout';
 
 type Props = {
     children: React.ReactNode;
@@ -14,7 +14,8 @@ export default function AuthLayout({ children }: Props) {
 
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(true);
-    const router = useRouter();
+
+    const { manualLogout } = useLogout({ watcherEnable: !loading });
 
     useEffect(() => {
         const fetchToken = async () => {
@@ -28,7 +29,7 @@ export default function AuthLayout({ children }: Props) {
                 dispatch(setAccessToken(res.data.accessToken));
             } catch (error) {
                 console.error('❌ Error fetching token:', error);
-                router.replace('/');
+                manualLogout();
             } finally {
                 setLoading(false);
             }
