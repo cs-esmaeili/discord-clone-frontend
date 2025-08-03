@@ -4,44 +4,57 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background); /* پس‌زمینه‌ی اصلی صفحه (body, main, layout) */
+  --color-foreground: var(--foreground); /* متن‌های عمومی روی پس‌زمینه‌ی اصلی */
+
+  --font-sans: var(--font-geist-sans); /* فونت اصلی رابط کاربری */
+  --font-mono: var(--font-geist-mono); /* فونت برای کد یا اطلاعات فنی */
+
+  --color-sidebar-ring: var(--sidebar-ring); /* هایلایت فوکوس روی آیتم‌های سایدبار */
+  --color-sidebar-border: var(--sidebar-border); /* کادر دور یا بین آیتم‌های سایدبار */
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground); /* رنگ متن روی hover یا آیتم تأکیدی سایدبار */
+  --color-sidebar-accent: var(--sidebar-accent); /* رنگ hover یا highlight آیتم‌های سایدبار */
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground); /* رنگ متن آیتم فعال در سایدبار */
+  --color-sidebar-primary: var(--sidebar-primary); /* رنگ آیتم فعال در سایدبار */
+  --color-sidebar-foreground: var(--sidebar-foreground); /* رنگ عمومی متن در سایدبار */
+  --color-sidebar: var(--sidebar); /* پس‌زمینه‌ی سایدبار */
+
+  --color-chart-5: var(--chart-5); /* رنگ پنجم برای نمودارها */
+  --color-chart-4: var(--chart-4); /* رنگ چهارم برای نمودارها */
+  --color-chart-3: var(--chart-3); /* رنگ سوم برای نمودارها */
+  --color-chart-2: var(--chart-2); /* رنگ دوم برای نمودارها */
+  --color-chart-1: var(--chart-1); /* رنگ اول برای نمودارها */
+
+  --color-ring: var(--ring); /* رنگ دور فوکوس برای input, button و المان‌های interactable */
+  --color-input: var(--input); /* پس‌زمینه‌ی فیلدهای فرم (input, textarea, select) */
+  --color-border: var(--border); /* رنگ حاشیه برای فرم‌ها، کارت‌ها، جداکننده‌ها */
+
+  --color-destructive: var(--destructive); /* رنگ دکمه‌ها یا پیام‌های خطرناک (مثل حذف یا ارور) */
+
+  --color-accent-foreground: var(--accent-foreground); /* رنگ متن روی رنگ accent (hover ها، لینک‌ها) */
+  --color-accent: var(--accent); /* رنگ تأکیدی برای hover، لینک‌ها یا دکمه‌های خاص */
+
+  --color-muted-foreground: var(--muted-foreground); /* رنگ متن‌های توضیحی، خاکستری یا کم‌رنگ */
+  --color-muted: var(--muted); /* پس‌زمینه‌های کم‌رنگ یا غیرفعال (disbaled) */
+
+  --color-secondary-foreground: var(--secondary-foreground); /* رنگ متن روی دکمه ثانویه */
+  --color-secondary: var(--secondary); /* رنگ دکمه‌های ثانویه، مثل "بازگشت" */
+
+  --color-primary-foreground: var(--primary-foreground); /* رنگ متن روی دکمه اصلی */
+  --color-primary: var(--primary); /* رنگ دکمه اصلی، CTA ها، لینک‌های مهم */
+
+  --color-popover-foreground: var(--popover-foreground); /* رنگ متن داخل popover یا tooltip */
+  --color-popover: var(--popover); /* پس‌زمینه‌ی popover، tooltip، context menu */
+
+  --color-card-foreground: var(--card-foreground); /* رنگ متن و آیکن داخل کارت‌ها */
+  --color-card: var(--card); /* پس‌زمینه‌ی کارت‌ها، باکس‌های محتوا (profile, product, etc.) */
+
+  --radius-sm: calc(var(--radius) - 4px); /* گوشه‌ی گرد کوچک */
+  --radius-md: calc(var(--radius) - 2px); /* گوشه‌ی گرد متوسط */
+  --radius-lg: var(--radius); /* گوشه‌ی گرد اصلی (استاندارد) */
+  --radius-xl: calc(var(--radius) + 4px); /* گوشه‌ی گرد بزرگ برای کارت‌های خاص یا مودال */
 }
+
 
 :root {
   --radius: 0.625rem;
