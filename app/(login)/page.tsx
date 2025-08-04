@@ -20,11 +20,13 @@ export default function Home() {
       {/* End Box in center of screen */}
 
 
-      <div className="bg-primary w-250 h-250 rounded-full absolute blur-[170px] opacity-75 top-1/2"></div>
 
-      <div className="bg-primary w-160 h-160 rounded-full absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2  blur-[170px] opacity-75 "></div>
+      <div className="bg-primary w-[650px] h-[650px] rounded-full absolute opacity-75  blur-3xl top-3/5 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse-large"></div>
 
-      <div className="bg-primary w-160 h-160 rounded-full absolute top-0 right-0 translate-x-1/2 -translate-y-1/2  blur-[170px] opacity-75 "></div>
+      <div className="bg-primary w-[550px] h-[550px]  rounded-full absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2  opacity-75  blur-3xl animate-pulse-large"></div>
+
+      <div className="bg-primary w-[550px] h-[550px]  rounded-full absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 opacity-75  blur-3xl animate-pulse-large"></div>
+
 
 
 
