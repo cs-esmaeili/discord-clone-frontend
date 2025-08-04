@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setAccessToken } from '@/lib/redux/slices/authSlice';
 import { useLogout } from '@/hooks/useLogout';
+import Sidebar from '@/components/Sidebar';
 
 type Props = {
     children: React.ReactNode;
@@ -50,5 +51,14 @@ export default function AuthLayout({ children }: Props) {
     }
 
 
-    return <main className="p-10">{children}</main>;
+    return (
+        <main className="bg-red-400 max-h-screen h-screen flex overflow-hidden">
+            <Sidebar />
+            <div className='flex flex-col  flex-[6] bg-amber-700 overflow-hidden  shrink-0'>
+                {children}
+            </div>
+
+
+        </main >
+    )
 }

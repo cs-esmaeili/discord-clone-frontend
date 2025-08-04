@@ -6,9 +6,6 @@ import { RootState } from '@/lib/redux/store';
 import { clearAccessToken } from '@/lib/redux/slices/authSlice';
 import { useRouter } from 'next/navigation';
 
-type UseLogoutOptions = {
-    watcherEnable?: boolean;
-};
 
 export const useLogout = ({ watcherEnable = false }: { watcherEnable?: boolean } = {}) => {
 
