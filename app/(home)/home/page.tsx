@@ -1,47 +1,17 @@
 'use client'
 
-import { check } from '@/lib/axios/services/test';
-import { Button } from '@/components/ui/button';
 import React from 'react';
 
-{/* <Button onClick={async () => {
-    try {
-        const test = await check();
-        console.log(test.data);
-
-    } catch (error) {
-        console.log(error);
-    }
-}}>test api</Button> */}
-
-
-const page = () => {
+const HomePage = () => {
     return (
-        <>
-            <div className='flex-[1] bg-red-400 shrink-0'>
-                header
+        <div className='h-full flex grow justify-center items-center bg-gray-50'>
+            <div className="text-center text-gray-500">
+                <div className="text-6xl mb-4">💬</div>
+                <h2 className="text-xl font-medium mb-2">Select a chat to start messaging</h2>
+                <p className="text-sm">Choose a conversation from the sidebar to begin</p>
             </div>
-            <div className='flex flex-[15] flex-col gap-3 bg-amber-200 overflow-y-auto'>
-
-
-                <div className='h-50 bg-teal-300 flex justify-center items-center shrink-0'>this is test card</div>
-                <div className='h-50 bg-teal-300 flex justify-center items-center shrink-0'>this is test card</div>
-                <div className='h-50 bg-teal-300 flex justify-center items-center shrink-0'>this is test card</div>
-                <div className='h-50 bg-teal-300 flex justify-center items-center shrink-0'>this is test card</div>
-                <div className='h-50 bg-teal-300 flex justify-center items-center shrink-0'>this is test card</div>
-                <div className='h-50 bg-teal-300 flex justify-center items-center shrink-0'>this is test card</div>
-                <div className='h-50 bg-teal-300 flex justify-center items-center shrink-0'>this is test card</div>
-                <div className='h-50 bg-teal-300 flex justify-center items-center shrink-0'>this is test card</div>
-                <div className='h-50 bg-teal-300 flex justify-center items-center shrink-0'>this is test card</div>
-                <div className='h-50 bg-teal-300 flex justify-center items-center shrink-0'>this is test card</div>
-                <div className='h-50 bg-teal-300 flex justify-center items-center shrink-0'>this is test card</div>
-                <div className='h-50 bg-teal-300 flex justify-center items-center shrink-0'>this is test card</div>
-                <div className='h-50 bg-teal-300 flex justify-center items-center shrink-0'>this is test card</div>
-                <div className='h-50 bg-teal-300 flex justify-center items-center shrink-0'>this is test card</div>
-
-            </div>
-        </>
+        </div>
     );
 };
 
-export default page;
+export default HomePage;
